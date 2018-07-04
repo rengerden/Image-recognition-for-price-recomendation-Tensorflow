@@ -1,0 +1,11 @@
+source 'https://rubygems.org'
+ruby '2.4.2'
+
+gem 'sinatra'
+gem 'httparty'
+gem 'activeresource', '4.1'
+gem 'dotenv'
+gem 'meli', :git => 'https://github.com/ChuyUX/ruby-sdk.git'
+gem 'openssl'
+#gem 'zlib'
+#gem 'eventmachine', :github => 'eventmachine/eventmachine', :ref => 'b7d9ef8'

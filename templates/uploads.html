@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
+        <title>Document</title>
+        <style>
+            .full-vh{
+                min-height: 100vh;
+            }
+            .full-wd{
+                margin-bottom: 10%;
+                min-width: 100%;
+            }
+            .back {
+                background-color: #34495E;
+                font-family: 'Noto Sans', sans-serif;
+            }
+            .card .card-image .card-title{
+                width: 100%;
+                background: -webkit-linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.5));
+                text-transform: uppercase;
+                font-weight: bolder;
+            }
+            .card .card-image img, .card .card-image .row{
+                height: 20em;
+                object-fit: cover;
+            }
+            @media only screen and (min-width: 601px){
+                .card .card-image img, .card .card-image .row{
+                    height: 35em;
+                }
+            }
+        </style>
+    </head>
+    <body class="back">
+        <div class="container full-vh valign-wrapper">
+            <div class="row full-wd">
+                <div class="col s12">
+                    <h1 class="white-text center-align">¿Cuánto cuesta?</h1>
+                    <form action='' method=post enctype=multipart/form-data>
+                        <div class="file-field input-field">
+                            <div class="btn transparent z-depth-0 white-text">
+                                <i class="material-icons">add</i>
+                                <input type="file" name=file >
+                            </div>
+                            <div class="file-path-wrapper">
+                                <input class="file-path validate" id="uploadfiles" onchange="this.form.submit()" size="35"  required="" type="text" placeholder="Subir foto">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
+        <title>Document</title>
+        <style>
+            .font-lg{
+                font-size: 110%;
+            }
+            .no-mb{
+                margin-bottom: 0;
+            }
+            .back {
+                background-color: #34495E;
+                font-family: 'Noto Sans', sans-serif;
+            }
+            .card .card-image .card-title{
+                width: 100%;
+                background: -webkit-linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.5));
+                text-transform: uppercase;
+                font-weight: bolder;
+            }
+            .card .card-image img, .card .card-image .row{
+                height: 20em;
+                object-fit: cover;
+            }
+            @media only screen and (min-width: 601px){
+                .font-lg{
+                    font-size: 150%;
+                }
+                .card .card-image img, .card .card-image .row{
+                    height: 35em;
+                }
+            }
+        </style>
+    </head>
+    <body class="back">
+        {% if product %}
+        <div class="container">
+            <div class="row">
+                <div class="col s12 xl8 offset-xl2">
+                    <h3 class="white-text">¿Este es tu producto?</h3>
+                    <button class="btn waves-effect waves-light green z-depth-4" type="submit" name="action">Si, es este
+                        <i class="material-icons right">check</i>
+                    </button>
+                    <button class="btn waves-effect waves-light red z-depth-4" type="submit" name="action">No
+                        <i class="material-icons right">clear</i>
+                    </button>
+                    <div class="card z-depth-2 hoverable">
+                        <div class="card-image">
+                            <img src="uploads/{{img}}" alt="">
+                            <span  class="card-title"><h3>{{product}}</h3></span>
+                        </div>
+                        <div class="card-content">
+                            <div class="row">
+                                <div class="col s4 center-align">
+                                    <p>Menor precio:</p>
+                                    <p class="flow-text">$<span class="font-lg">{{'%0.2f' %minP|float}}</span></p>
+                                </div>
+                                <div class="col s4 center-align">
+                                    <p>Media precio:</p>
+                                    <p class="flow-text">$<span class="font-lg">{{'%0.2f' %meanP|float}}</span></p>
+                                </div>
+                                <div class="col s4 center-align">
+                                    <p>Mayor precio:</p>
+                                    <p class="flow-text">$<span class="font-lg">{{'%0.2f' %maxP|float}}</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="center-align">
+                        <a class="waves-effect waves-light btn btn-large" href="{{url_for('upload_file')}}">Buscar otro producto</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m10 offset-m2">
+                    <h4 class="white-text">O quizá era uno de estos:</h4>
+                </div>
+                <div class="col s12 m4 offset-m2">
+                    <div class="card z-depth-2 no-mb">
+                        <div class="card-content ">
+                            <h3>{{secName}}</h3>
+                            <p>Menor precio:</p>
+                            <p class="flow-text">$ <span class="font-lg">{{'%0.2f' %secMin|float}}</span></p>
+                            <p>Media precio:</p>
+                            <p class="flow-text">$ <span class="font-lg">{{'%0.2f' %secMean|float}}</span></p>
+                            <p>Mayor precio:</p>
+                            <p class="flow-text">$ <span class="font-lg">{{'%0.2f' %secMax|float}}</span></p>
+                        </div>
+                    </div>
+                    <button class="btn waves-effect waves-light green z-depth-4 col s12" type="submit" name="action">Es este
+                        <i class="material-icons right">check</i>
+                    </button>
+                </div>
+                <div class="col s12 m4">
+                    <div class="card z-depth-2 no-mb">
+                        <div class="card-content">
+                            <h3>{{trdName}}</h3>
+                            <p>Menor precio:</p>
+                            <p class="flow-text">$<span class="font-lg">{{'%0.2f' %trdMin|float}}</span></p>
+                            <p>Media precio:</p>
+                            <p class="flow-text">$<span class="font-lg">{{'%0.2f' %trdMean|float}}</span></p>
+                            <p>Mayor precio:</p>
+                            <p class="flow-text">$<span class="font-lg">{{'%0.2f' %trdMax|float}}</span></p>
+                        </div>
+                    </div>
+                    <button class="btn waves-effect waves-light green z-depth-4 col s12" type="submit" name="action">Es este
+                        <i class="material-icons right">check</i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        {% endif %} 
+    </body>
+</html>

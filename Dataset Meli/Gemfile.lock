@@ -1,0 +1,63 @@
+GIT
+  remote: https://github.com/ChuyUX/ruby-sdk.git
+  revision: 92c61e4ffec4c9cfb8a15cc9bb4911892f2cb7d7
+  specs:
+    meli (0.0.1)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    activemodel (4.2.10)
+      activesupport (= 4.2.10)
+      builder (~> 3.1)
+    activeresource (4.1.0)
+      activemodel (~> 4.0)
+      activesupport (~> 4.0)
+      rails-observers (~> 0.1.2)
+    activesupport (4.2.10)
+      i18n (~> 0.7)
+      minitest (~> 5.1)
+      thread_safe (~> 0.3, >= 0.3.4)
+      tzinfo (~> 1.1)
+    builder (3.2.3)
+    concurrent-ruby (1.0.5)
+    dotenv (2.2.2)
+    httparty (0.16.2)
+      multi_xml (>= 0.5.2)
+    i18n (0.9.5)
+      concurrent-ruby (~> 1.0)
+    minitest (5.11.3)
+    multi_xml (0.6.0)
+    mustermann (1.0.2)
+    openssl (2.1.0)
+    rack (2.0.4)
+    rack-protection (2.0.1)
+      rack
+    rails-observers (0.1.5)
+      activemodel (>= 4.0)
+    sinatra (2.0.1)
+      mustermann (~> 1.0)
+      rack (~> 2.0)
+      rack-protection (= 2.0.1)
+      tilt (~> 2.0)
+    thread_safe (0.3.6)
+    tilt (2.0.8)
+    tzinfo (1.2.5)
+      thread_safe (~> 0.1)
+
+PLATFORMS
+  x64-mingw32
+
+DEPENDENCIES
+  activeresource (= 4.1)
+  dotenv
+  httparty
+  meli!
+  openssl
+  sinatra
+
+RUBY VERSION
+   ruby 2.4.2p198
+
+BUNDLED WITH
+   1.16.0
